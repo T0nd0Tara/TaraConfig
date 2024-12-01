@@ -26,6 +26,9 @@ nmap ( O<ESC>
 nmap L $
 nmap H ^
 
+vmap L $
+vmap H ^
+
 if has('filetype')
 	filetype indent plugin on
 endif
