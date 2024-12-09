@@ -27,9 +27,8 @@ map("n", "<leader>ga", function()
 map("n", "<leader>gA", function()
     -- TODO: 'file_in_path' works only on the first file, fix it with a custom function
     vim.ui.input({ prompt = "Enter Files: ", completion="file_in_path"}, function(files) 
-      if files == '' then return end
+      if files == nil then return end
 
-      files = files or "."
       vim.cmd('! git add ' .. files)
     end)
   end, { desc = "Git Add Multiple Files"})
