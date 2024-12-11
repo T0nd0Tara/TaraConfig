@@ -1,4 +1,5 @@
 require "nvchad.mappings"
+local utils = require "utils"
 
 local map = vim.keymap.set
 
@@ -8,11 +9,22 @@ map("n", "<leader>md", "<cmd> MarkdownPreviewToggle <CR>", { desc = "live previe
 map("n", "<leader>fm", function() require("conform").format() end, { desc = "formatting" })
 
 -- Telescope
-map("n", "<leader>fg", "<cmd> Telescope live_grep <CR>", { desc = "Live grep" })
-map("n", "<leader>ff", "<cmd> Telescope find_files <CR>", { desc = "Find Files" })
+local function create_telescope_multimapping(cmd, func, desc)
+  map("n", cmd, func, { desc = desc })
+  map("v", cmd, function()
+    func({
+      additional_args = {'--multiline'},
+      default_text = utils.get_formatted_visual(),
+    })
+  end, { desc = desc })
+end
+
+create_telescope_multimapping("<leader>fg", require('telescope.builtin').live_grep, "Live grep")
+create_telescope_multimapping("<leader>ff", require('telescope.builtin').find_files, "Find Files")
+
 -- Telescope Git
-map("n", "<leader>gc", "<cmd> Telescope git_branches <CR>", { desc = "Git Checkout" })
-map("n", "<leader>gd", "<cmd> Telescope git_status <CR>", { desc = "Git Diff" })
+map({"n", "v"}, "<leader>gc", "<cmd> Telescope git_branches <CR>", { desc = "Git Checkout" })
+map({"n", "v"}, "<leader>gd", "<cmd> Telescope git_status <CR>", { desc = "Git Diff" })
 
 -- Git
 map("n", "<leader>go", function()
