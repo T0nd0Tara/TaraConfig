@@ -18,7 +18,8 @@ require("lazy").setup({
   {
     "NvChad/NvChad",
     lazy = false,
-    branch = "v2.5",
+    -- branch = "v2.5",
+    commit = "bbc3d43", -- I don't want it to update as I changed the telescope config in it.
     import = "nvchad.plugins",
   },
 
