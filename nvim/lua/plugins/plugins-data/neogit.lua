@@ -317,20 +317,7 @@ return {
 
     "nvim-telescope/telescope.nvim", -- optional
   },
-  init = function ()
-    local neogit = require('neogit')
-    neogit.setup(config)
-
-    map("n", "<leader>gl", function()
-      neogit.open({ "log" })
-      vim.api.nvim_feedkeys('h', 't', false)
-    end, {desc = "Open Git Log"})
-
-    map("n", "<leader>gf", function()
-      neogit.open({ "fetch" })
-      vim.api.nvim_feedkeys('a', 't', false)
-    end, {desc = "Git Fetch"})
-  end,
+  init = function () require('neogit').setup(config) end,
   config = true
 }
 

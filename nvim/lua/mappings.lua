@@ -45,6 +45,16 @@ map("n", "<leader>gA", function()
     end)
   end, { desc = "Git Add Multiple Files"})
 
+
+map("n", "<leader>gl", function()
+  require'neogit'.open({ "log" })
+  vim.api.nvim_feedkeys('h', 't', false)
+end, {desc = "open git log"})
+
+map("n", "<leader>gf", function()
+  require'neogit'.open({ "fetch" })
+  vim.api.nvim_feedkeys('a', 't', false)
+end, {desc = "git fetch"})
 -- Run
 map("n", "<leader>rc", require('runner').run, { desc = "Run Current File"})
 map("n", "<leader>ru", require('runner').autorun, { desc = "Run every Update"})
