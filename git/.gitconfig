@@ -1,0 +1,15 @@
+[user]
+	email = 5632815@gmail.com
+	name = T0nd0Tara
+	user = T0nd0Tara
+	password = 
+[push]
+	autoSetupRemote = true
+[init]
+ 	defaultBranch = "master"
+[http]
+	sslVerify = true
+[credential]
+	helper = manager
+[core]
+	editor = vim
