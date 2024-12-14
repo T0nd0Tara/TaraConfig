@@ -270,9 +270,10 @@ return {
   -- "T0nd0Tara/profile.nvim",
   -- branch = "feat/add-cache-timeout-for-contributions-api",
   -- "T0nd0Tara/profile.nvim",
-  dir = '~/code/plugins/profile.nvim/',
+  -- dir = '~/code/plugins/profile.nvim/',
+  "Kurama622/profile.nvim",
   name = "profile.nvim",
-  dev = { true },
+  -- dev = { true },
   lazy = false,
   config = function()
     require("profile").setup({
