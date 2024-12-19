@@ -10,6 +10,8 @@ local options = {
 		html = { "prettier" },
 
 		sh = { "shfmt" },
+
+		c = { "clang-format" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some
@@ -20,6 +22,11 @@ local options = {
 	--   timeout_ms = 500,
 	--   lsp_fallback = true,
 	-- },
+  formatters = {
+    clang_format = {
+      prepend_args = { '--style=file', '--fallback-style=LLVM' },
+    },
+  },
 }
 
 return options
