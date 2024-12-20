@@ -5,6 +5,7 @@ local map = vim.keymap.set
 
 map("t", "jk", "<C-\\><C-n>", { desc = "exit terminal" })
 map("n", "<leader>md", "<cmd> MarkdownPreviewToggle <CR>", { desc = "live preview of Markdown"})
+--
 --  format with conform
 map("n", "<leader>fm", function() require("conform").format() end, { desc = "formatting" })
 
@@ -55,6 +56,10 @@ map("n", "<leader>gf", function()
   require'neogit'.open({ "fetch" })
   vim.api.nvim_feedkeys('a', 't', false)
 end, {desc = "git fetch"})
+
+-- Lsp
+map("n", "<leader>lr", "<cmd> LspRestart <CR>", { desc = "Lsp Restart" })
+
 -- Run
 map("n", "<leader>rc", require('runner').run, { desc = "Run Current File"})
 map("n", "<leader>ru", require('runner').autorun, { desc = "Run every Update"})
