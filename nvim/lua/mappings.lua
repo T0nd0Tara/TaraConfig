@@ -4,7 +4,7 @@ local utils = require "utils"
 local map = vim.keymap.set
 
 map("t", "jk", "<C-\\><C-n>", { desc = "exit terminal" })
-map("n", "<leader>md", "<cmd> MarkdownPreviewToggle <CR>", { desc = "live preview of Markdown"})
+map("n", "<leader>md", "<cmd> MarkdownPreviewToggle <CR>", { desc = "live preview of Markdown (toggle)"})
 --
 --  format with conform
 map("n", "<leader>fm", function() require("conform").format() end, { desc = "formatting" })
