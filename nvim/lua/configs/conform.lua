@@ -12,6 +12,8 @@ local options = {
 		sh = { "shfmt" },
 
 		c = { "clang-format" },
+
+		rs = { "rustfmt" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some
