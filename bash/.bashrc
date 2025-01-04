@@ -152,3 +152,4 @@ export GCM_CREDENTIAL_STORE='secretservice'
 eval "$(dircolors ~/.dir_colors)"
 
 export PROMPT_DIRTRIM=4
+
