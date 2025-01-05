@@ -57,6 +57,10 @@ map("n", "<leader>gf", function()
   vim.api.nvim_feedkeys('a', 't', false)
 end, {desc = "git fetch"})
 
+map("n", "<leader>gu", function()
+    vim.cmd('! git push')
+  end, { desc = "Git Commit"})
+
 -- Lsp
 map("n", "<leader>lr", "<cmd> LspRestart <CR>", { desc = "Lsp Restart" })
 
