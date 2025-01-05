@@ -5,6 +5,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias ..='cd ..'
+alias ...='cd ../..'
 
 # Vim / Neovim
 alias v='vim'
