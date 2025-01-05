@@ -14,3 +14,4 @@ alias :e='nvim'
 alias :q='exit'
 alias :qa=':q'
 
+alias bat='batcat'
