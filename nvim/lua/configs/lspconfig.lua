@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "ts_ls", "clangd", "pyright", "lua_ls", "rust-analyzer" }
+local servers = { "html", "cssls", "ts_ls", "clangd", "pyright", "lua_ls", "rust-analyzer", "ols" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
