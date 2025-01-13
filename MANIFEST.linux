@@ -1,0 +1,11 @@
+bash/.bash_aliases|symlink
+bash/.bashrc|symlink
+bash/.dir_colors|symlink
+#------
+git/.gitconfig|symlink
+#------
+kitty|symlink|.config
+nvim|symlink|.config
+zellij|symlink|.config
+#------
+oh-my-bash/custom|symlink|.oh-my-bash
