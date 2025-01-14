@@ -58,6 +58,7 @@ local plugins = {
   add_plugin('timerly'),
   add_plugin('runner'),
   add_plugin('smear-cursor'),
+  add_plugin('tiny-glimmer'),
 }
 
 
