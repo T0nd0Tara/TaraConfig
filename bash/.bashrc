@@ -144,8 +144,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export GCM_CREDENTIAL_STORE='secretservice'
-
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 

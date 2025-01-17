@@ -11,5 +11,6 @@
 	sslVerify = true
 [credential]
 	helper = manager
-[core]
+  credentialStore = secretservice
+[secretservicecore]
 	editor = vim
