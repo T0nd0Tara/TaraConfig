@@ -61,6 +61,8 @@ map("n", "<leader>gu", function()
     vim.cmd('! git push')
   end, { desc = "Git Commit"})
 
+map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff view history"})
+
 -- Lsp
 map("n", "<leader>lr", "<cmd> LspRestart <CR>", { desc = "Lsp Restart" })
 
