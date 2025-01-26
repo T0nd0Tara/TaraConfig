@@ -59,7 +59,7 @@ end, {desc = "git fetch"})
 
 map("n", "<leader>gu", function()
     vim.cmd('! git push')
-  end, { desc = "Git Commit"})
+  end, { desc = "Git Push"})
 
 map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff view history"})
 
