@@ -66,6 +66,13 @@ map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff vi
 -- Lsp
 map("n", "<leader>lr", "<cmd> LspRestart <CR>", { desc = "Lsp Restart" })
 
+map("n", "<leader>lx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics" })
+map("n", "<leader>lc", "<cmd>Current Diagnostics toggle filter.buf=0<cr>", { desc = "Buffer Diagnostics (Trouble)" })
+map("n", "<leader>ls", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols" })
+map("n", "<leader>ld", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions / references / ..." })
+map("n", "<leader>lL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List" })
+map("n", "<leader>lf", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List" })
+
 -- Run
 map("n", "<leader>rc", require('runner').run, { desc = "Run Current File"})
 map("n", "<leader>ru", require('runner').autorun, { desc = "Run every Update"})

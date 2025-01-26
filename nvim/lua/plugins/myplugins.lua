@@ -60,6 +60,7 @@ local plugins = {
   add_plugin('smear-cursor'),
   add_plugin('tiny-glimmer'),
   add_plugin('diffview'),
+  add_plugin('trouble'),
 }
 
 
