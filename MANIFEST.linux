@@ -5,7 +5,9 @@ bash/.dir_colors|symlink
 git/.gitconfig|symlink
 #------------------------
 kitty|symlink|.config
-nvim|symlink|.config
 zellij|symlink|.config
+nvim|symlink|.config
+#------------------------
+nvim/.vimrc|symlink
 #------------------------
 oh-my-bash/custom|symlink|.oh-my-bash
