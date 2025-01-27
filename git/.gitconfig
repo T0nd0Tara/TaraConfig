@@ -12,5 +12,5 @@
 [credential]
 	helper = manager
   credentialStore = secretservice
-[secretservicecore]
+[core]
 	editor = vim
