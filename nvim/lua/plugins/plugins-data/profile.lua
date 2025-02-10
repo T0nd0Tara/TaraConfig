@@ -266,6 +266,16 @@ local ascii_art_headers = {
     [[             """"          """""""               ]],
   },
 }
+
+local function load_ascii(file_name)
+  local lines = {}
+  for line in io.lines(vim.fn.stdpath('config') .. '/ascii/' .. file_name) do
+    lines[#lines+1] = line
+  end
+
+  return lines
+end
+
 return {
   -- "T0nd0Tara/profile.nvim",
   -- branch = "feat/add-cache-timeout-for-contributions-api",
@@ -303,19 +313,28 @@ return {
       -- Customize the content to render
       format = function()
         local comp = require("profile.components")
-        local ascii_art_header_idx = math.random(#ascii_art_headers)
-        local header = ascii_art_headers[ascii_art_header_idx]
-        for _, line in ipairs(header) do
-          comp:text_component_render({ comp:text_component(line, "center", "ProfileBlue") })
+        -- local ascii_art_header_idx = math.random(#ascii_art_headers)
+        -- local header = ascii_art_headers[ascii_art_header_idx]
+        local left = load_ascii('creation_of_adam_left.txt');
+        local right = load_ascii('creation_of_adam_right.txt');
+
+        local max_height = math.max(#left, #right)
+
+        local middle =  math.ceil(max_height / 2)
+        local middle_message = "  git@github.com:T0nd0Tara  "
+
+        for i=1,max_height do
+          local middle_segment = middle_message
+          if i ~= middle then
+            middle_segment = string.rep(" ", middle_segment:len())
+          end
+          local line = left[i] .. middle_segment .. right[i]
+          comp:text_component_render({
+            comp:text_component(line, "center", "ProfileBlue"),
+          })
         end
 
         comp:separator_render()
-
-        -- customize text component
-        comp:text_component_render({
-          comp:text_component("git@github.com:T0nd0Tara", "center", "ProfileRed"),
-          -- comp:text_component("──── Da Bes", "right", "ProfileBlue"),
-        })
         comp:separator_render()
 
         -- Custom card component, render git repository by default
