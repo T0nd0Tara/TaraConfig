@@ -323,16 +323,23 @@ return {
         local middle =  math.ceil(max_height / 2)
         local middle_message = "  git@github.com:T0nd0Tara  "
 
+        local lines = {}
         for i=1,max_height do
           local middle_segment = middle_message
           if i ~= middle then
             middle_segment = string.rep(" ", middle_segment:len())
           end
           local line = left[i] .. middle_segment .. right[i]
-          comp:text_component_render({
-            comp:text_component(line, "center", "ProfileBlue"),
-          })
+          lines[i] = comp:text_component(line, "center", "ProfileBlue");
         end
+        comp:text_component_render(lines)
+
+        local padding = lines[middle].content():len() - (left[middle]:len() + middle_message:len() + right[middle]:len())
+        vim.api.nvim_set_option_value("modifiable", true, { buf = comp.opts.bufnr })
+        vim.api.nvim_set_option_value("modified", true, { buf = comp.opts.bufnr })
+        vim.api.nvim_buf_add_highlight(comp.opts.bufnr, -1, "ProfileRed", middle, padding + left[middle]:len() + 1, padding + left[middle]:len() + middle_message:len())
+        vim.api.nvim_set_option_value("modifiable", false, { buf = comp.opts.bufnr })
+        vim.api.nvim_set_option_value("modified", false, { buf = comp.opts.bufnr })
 
         comp:separator_render()
         comp:separator_render()
