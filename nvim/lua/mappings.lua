@@ -85,6 +85,12 @@ map("n", "<leader>dn", "<cmd> lua require'dap'.step_over() <CR>", { desc = "Step
 map("n", "<leader>di", "<cmd> lua require'dap'.step_into() <CR>", { desc = "Step Into" })
 map("n", "<leader>dr", "<cmd> lua require'dap'.repl.open() <CR>", { desc = "Open REPL" })
 
+-- AI
+map("n", "<leader>ai", "<cmd> ChatGPT <CR>", { desc = "Open ChatGPT" })
+map("n", "<leader>ac", "<cmd> ChatGPTCompleteCode <CR>", { desc = "ChatGPT Complete Code" })
+map({"x", "v"}, "<leader>ae", "<cmd> ChatGPTEditWithInstructions <CR>", { desc = "ChatGPT Edit with Instructions" })
+
+-- misc
 map("n", "<leader>dv", "<cmd> DataViewer <CR>", { desc = "Open Data Viewer" })
 
 

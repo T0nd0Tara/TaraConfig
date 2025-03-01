@@ -180,9 +180,6 @@ keybinds clear-defaults=true {
     shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
         bind "t" { SwitchToMode "tab"; }
     }
-    shared_except "locked" "tab" "scroll" "entersearch" "renametab" "renamepane" {
-        bind "s" { SwitchToMode "scroll"; }
-    }
     shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
         bind "p" { SwitchToMode "pane"; }
     }

@@ -24,6 +24,13 @@ return {
         top_p = 0.1,
         n = 1,
       },
+      chat = {
+        keymaps = {
+          close = "q",
+          toggle_settings = "<C-M-s>",
+          select_session = "<Enter>",
+        },
+      },
     })
   end,
   dependencies = {
