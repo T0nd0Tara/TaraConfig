@@ -61,6 +61,7 @@ local plugins = {
   add_plugin('tiny-glimmer'),
   add_plugin('diffview'),
   add_plugin('trouble'),
+  add_plugin('chatgpt'),
 }
 
 
