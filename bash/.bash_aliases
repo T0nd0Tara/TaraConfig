@@ -22,3 +22,7 @@ alias bat='batcat'
 alias pyvenv='python3 -m venv venv && chmod +x ./venv/bin/activate && . ./venv/bin/activate'
 alias pyac='chmod +x ./venv/bin/activate && . ./venv/bin/activate'
 alias pyde='deactivate'
+
+# redis
+alias redis-start='snap start redis'
+alias redis-stop='snap stop redis'
