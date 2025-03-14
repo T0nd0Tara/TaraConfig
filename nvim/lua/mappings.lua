@@ -93,6 +93,9 @@ map({"x", "v"}, "<leader>ae", "<cmd> ChatGPTEditWithInstructions <CR>", { desc =
 -- misc
 map("n", "<leader>dv", "<cmd> DataViewer <CR>", { desc = "Open Data Viewer" })
 
+map("n", "<C-/>", "gcc", { desc = "Toggle Comment"})
+map("n", "yc", "yygccp", { desc = "Yank Comment (comments and copies over)"})
+
 
 map("v", ">", ">gv", { desc = "indent" })
 map("v", "<", "<gv", { desc = "indent" })
