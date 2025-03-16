@@ -26,3 +26,8 @@ alias pyde='deactivate'
 # redis
 alias redis-start='snap start redis'
 alias redis-stop='snap stop redis'
+
+# vm
+vm() {
+  sshpass -p $(pass $1-pass) ssh root@$(pass $1-ip)
+}
