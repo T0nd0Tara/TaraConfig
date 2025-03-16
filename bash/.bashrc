@@ -151,3 +151,5 @@ eval "$(dircolors ~/.dir_colors)"
 
 export PROMPT_DIRTRIM=4
 
+
+. "$HOME/.local/bin/env"
