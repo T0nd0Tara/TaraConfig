@@ -31,3 +31,6 @@ alias redis-stop='snap stop redis'
 vm() {
   sshpass -p $(pass $1-pass) ssh root@$(pass $1-ip)
 }
+
+# code interperter
+alias deno='~/.deno/bin/deno'
