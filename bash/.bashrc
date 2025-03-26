@@ -153,3 +153,4 @@ export PROMPT_DIRTRIM=4
 
 
 . "$HOME/.local/bin/env"
+. "$HOME/.deno/env"
