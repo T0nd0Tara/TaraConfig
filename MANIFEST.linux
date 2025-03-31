@@ -4,10 +4,10 @@ bash/.dir_colors|symlink
 #------------------------
 git/.gitconfig|symlink
 #------------------------
-kitty|symlink|.config
-zellij|symlink|.config
-nvim|symlink|.config
+kitty|symlink|~/.config
+zellij|symlink|~/.config
+nvim-lazy|symlink|~/.config|nvim
 #------------------------
-nvim/.vimrc|symlink
+nvim-chad/.vimrc|symlink
 #------------------------
-oh-my-bash/custom|symlink|.oh-my-bash
+oh-my-bash/custom|symlink|~/.oh-my-bash
