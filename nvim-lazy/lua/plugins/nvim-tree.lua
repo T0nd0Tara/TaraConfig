@@ -4,7 +4,10 @@ return {
   opts = function()
     dofile(vim.g.base46_cache .. "nvimtree")
     return { 
-
+      git = {
+        ignore = false,
+        enable = true,
+      },
       filters = { dotfiles = false },
       disable_netrw = true,
       hijack_cursor = true,
@@ -22,6 +25,9 @@ return {
         highlight_git = true,
         indent_markers = { enable = true },
         icons = {
+          show = {
+            git = true,
+          },
           glyphs = {
             default = "󰈚",
             folder = {
