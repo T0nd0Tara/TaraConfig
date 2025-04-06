@@ -63,12 +63,20 @@ map({ "n", "v" }, "<leader>gd", "<cmd> Telescope git_status <CR>", { desc = "Git
 -- Git
 map("n", "<leader>go", function()
   local message = vim.fn.input("Enter message: ")
-  vim.cmd('! git commit -m "' .. message .. '"')
+  vim.schedule(function()
+    vim.cmd('! git commit -m "' .. message .. '"')
+  end)
 end, { desc = "Git Commit" })
-map("n", "<leader>ga", function()
-  local curr_file = vim.api.nvim_buf_get_name(0)
-  vim.cmd("! git add " .. curr_file)
-end, { desc = "Git Add" })
+
+map(
+  "n",
+  "<leader>ga",
+  vim.schedule_wrap(function()
+    local curr_file = vim.api.nvim_buf_get_name(0)
+    vim.cmd("! git add " .. curr_file)
+  end),
+  { desc = "Git Add" }
+)
 
 map("n", "<leader>gA", function()
   -- TODO: 'file_in_path' works only on the first file, fix it with a custom function
@@ -77,7 +85,9 @@ map("n", "<leader>gA", function()
       return
     end
 
-    vim.cmd("! git add " .. files)
+    vim.schedule(function()
+      vim.cmd("! git add " .. files)
+    end)
   end)
 end, { desc = "Git Add Multiple Files" })
 
@@ -91,9 +101,14 @@ map("n", "<leader>gf", function()
   vim.api.nvim_feedkeys("a", "t", false)
 end, { desc = "git fetch" })
 
-map("n", "<leader>gu", function()
-  vim.cmd("! git push")
-end, { desc = "Git Push" })
+map(
+  "n",
+  "<leader>gu",
+  vim.schedule_wrap(function()
+    vim.cmd("! git push")
+  end),
+  { desc = "Git Push" }
+)
 
 map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff view history" })
 
