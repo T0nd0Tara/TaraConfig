@@ -61,6 +61,13 @@ map({ "n", "v" }, "<leader>gc", "<cmd> Telescope git_branches <CR>", { desc = "G
 map({ "n", "v" }, "<leader>gd", "<cmd> Telescope git_status <CR>", { desc = "Git Diff" })
 
 -- Git
+map("n", "<leader>gr", require("gitsigns").reset_hunk, { desc = "git reset hunk" })
+map("v", "<leader>gr", function()
+  require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+end, { desc = "git reset hunk" })
+
+map("n", "<leader>gR", require("gitsigns").reset_buffer, { desc = "git reset" })
+
 map("n", "<leader>go", function()
   local message = vim.fn.input("Enter message: ")
   vim.schedule(function()
