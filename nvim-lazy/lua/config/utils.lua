@@ -18,5 +18,7 @@ end
 function M.add_message_from_job(job_id, data, event_type)
   vim.print(table.concat(data, "\n"))
 end
+-- TODO: use different function for stderr
+M.job_opts = { on_stdout = M.add_message_from_job, on_stderr = M.add_message_from_job }
 
 return M

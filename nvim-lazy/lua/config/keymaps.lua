@@ -70,20 +70,13 @@ map("n", "<leader>gR", require("gitsigns").reset_buffer, { desc = "git reset" })
 
 map("n", "<leader>go", function()
   local message = vim.fn.input("Enter message: ")
-  vim.schedule(function()
-    vim.cmd('! git commit -m "' .. message .. '"')
-  end)
+  vim.fn.jobstart({ "git", "commit", "-m", '"' .. string.gsub(message, '"', '\\"') .. '"' }, utils.job_opts)
 end, { desc = "Git Commit" })
 
-map(
-  "n",
-  "<leader>ga",
-  vim.schedule_wrap(function()
-    local curr_file = vim.api.nvim_buf_get_name(0)
-    vim.cmd("! git add " .. curr_file)
-  end),
-  { desc = "Git Add" }
-)
+map("n", "<leader>ga", function()
+  local curr_file = vim.api.nvim_buf_get_name(0)
+  vim.fn.jobstart("git add " .. curr_file, utils.job_opts)
+end, { desc = "Git Add" })
 
 map("n", "<leader>gA", function()
   -- TODO: 'file_in_path' works only on the first file, fix it with a custom function
@@ -109,7 +102,7 @@ map("n", "<leader>gf", function()
 end, { desc = "git fetch" })
 
 map("n", "<leader>gu", function()
-  vim.fn.jobstart("git push", { on_stdout = utils.add_message_from_job })
+  vim.fn.jobstart("git push", utils.job_opts)
 end, { desc = "Git Push" })
 
 map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff view history" })
