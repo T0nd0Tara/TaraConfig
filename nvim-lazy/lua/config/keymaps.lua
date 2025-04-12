@@ -154,8 +154,9 @@ map({ "x", "v" }, "<leader>ae", "<cmd> ChatGPTEditWithInstructions <CR>", { desc
 -- misc
 map("n", "<leader>dv", "<cmd> DataViewer <CR>", { desc = "Open Data Viewer" })
 
-map("n", "<C-/>", "gcc", { desc = "Toggle Comment" })
-map("n", "yc", "yygccp", { desc = "Yank Comment (comments and copies over)" })
+map("n", "<C-/>", "gcc", { desc = "Toggle Comment", remap = true })
+map("v", "<C-/>", "gc", { desc = "Toggle Comment", remap = true })
+map("n", "yc", "yy<C-/>p", { desc = "Yank Comment (comments and copies over)", remap = true })
 
 map("v", ">", ">gv", { desc = "indent" })
 map("v", "<", "<gv", { desc = "indent" })
