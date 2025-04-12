@@ -16,22 +16,31 @@ end
 pcall(vim.keymap.del, { "n", "v" }, "s")
 map({ "n", "v" }, "L", "$")
 map({ "n", "v" }, "H", "^")
--- map("n", "<leader>e", function()
---   local res = require("snacks").explorer.open({
---     follow_file = true,
---     git_status_open = true,
---     git_untracked = true,
---   });
---
---   vim.print(res)
--- end)
+local useNvimTree = false
+
+if useNvimTree then
+  map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+  map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
+else
+  map("n", "<leader>e", function()
+    local explorer_pickers = Snacks.picker.get({ source = "explorer" })
+    for _, v in pairs(explorer_pickers) do
+      if v:is_focused() then
+        return
+      end
+      v:focus()
+    end
+    if #explorer_pickers == 0 then
+      Snacks.picker.explorer()
+    end
+  end)
+  map("n", "<C-n>", Snacks.picker.explorer)
+end
 
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
 -- nvimtree
-map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
 
 -- utils
 map("t", "jk", "<C-\\><C-n>", { desc = "exit terminal" })
