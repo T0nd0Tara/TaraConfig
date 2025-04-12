@@ -39,9 +39,10 @@ end
 
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-map("n", "<leader>x", function()
+map("n", "<leader>xc", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
+map("n", "<leader>xo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close Other Buffer" })
 
 -- nvimtree
 
