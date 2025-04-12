@@ -16,9 +16,13 @@ function M.get_formatted_visual()
 end
 
 function M.add_message_from_job(job_id, data, event_type)
-  vim.print(table.concat(data, "\n"))
+  vim.notify(table.concat(data, "\n"), vim.log.levels.INFO)
 end
--- TODO: use different function for stderr
-M.job_opts = { on_stdout = M.add_message_from_job, on_stderr = M.add_message_from_job }
+
+function M.add_error_from_job(job_id, data, event_type)
+  vim.notify(table.concat(data, "\n"), vim.log.levels.ERROR)
+end
+
+M.job_opts = { on_stdout = M.add_message_from_job, on_stderr = M.add_error_from_job }
 
 return M
