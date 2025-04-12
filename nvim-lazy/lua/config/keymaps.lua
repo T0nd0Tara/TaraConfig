@@ -70,7 +70,7 @@ map("n", "<leader>gR", require("gitsigns").reset_buffer, { desc = "git reset" })
 
 map("n", "<leader>go", function()
   local message = vim.fn.input("Enter message: ")
-  vim.fn.jobstart({ "git", "commit", "-m", '"' .. string.gsub(message, '"', '\\"') .. '"' }, utils.job_opts)
+  vim.fn.jobstart({ "git", "commit", "-m", message }, utils.job_opts)
 end, { desc = "Git Commit" })
 
 map("n", "<leader>ga", function()
