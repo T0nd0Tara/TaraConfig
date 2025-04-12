@@ -44,8 +44,6 @@ map("n", "<leader>xc", function()
 end, { desc = "Close Buffer" })
 map("n", "<leader>xo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close Other Buffer" })
 
--- nvimtree
-
 -- utils
 map("t", "jk", "<C-\\><C-n>", { desc = "exit terminal" })
 map("n", "<leader>md", "<cmd> MarkdownPreviewToggle <CR>", { desc = "live preview of Markdown (toggle)" })
