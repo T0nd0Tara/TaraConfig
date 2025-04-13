@@ -154,3 +154,5 @@ export PROMPT_DIRTRIM=4
 
 . "$HOME/.local/bin/env"
 . "$HOME/.deno/env"
+
+export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
