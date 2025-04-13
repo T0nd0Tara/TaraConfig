@@ -42,7 +42,9 @@ map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 map("n", "<leader>xc", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
-map("n", "<leader>xo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close Other Buffer" })
+map("n", "<leader>xo", "<cmd>BufferLineCloseOthers<cr>", { desc = "Close Other Buffers" })
+map("n", "<leader>xl", "<cmd>BufferLineCloseRight<cr>", { desc = "Close Buffers on Right" })
+map("n", "<leader>xh", "<cmd>BufferLineCloseLeft<cr>", { desc = "Close Buffers on Left" })
 
 -- utils
 map("t", "jk", "<C-\\><C-n>", { desc = "exit terminal" })
