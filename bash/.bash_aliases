@@ -34,3 +34,15 @@ vm() {
 
 # code interperter
 alias deno='~/.deno/bin/deno'
+
+# swapfile
+swapfile() {
+  path=$1
+  size=$2
+
+  fallocate -l $size $path
+  chmod 600 $path
+  mkswap $path
+  swapon $path
+  echo "$path swap swap defaults 0 0" >>/etc/fstab
+}
