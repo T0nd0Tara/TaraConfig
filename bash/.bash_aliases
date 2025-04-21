@@ -27,6 +27,9 @@ alias pyde='deactivate'
 alias redis-start='snap start redis'
 alias redis-stop='snap stop redis'
 
+# images
+alias viu='~/.cargo/bin/viu -b'
+
 # vm
 vm() {
   sshpass -p $(pass $1-pass) ssh root@$(pass $1-ip)
