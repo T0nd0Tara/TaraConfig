@@ -5,6 +5,7 @@ bash/.dir_colors|symlink
 git/.gitconfig|symlink
 #------------------------
 kitty|symlink|.config
+ranger|symlink|.config
 zellij|symlink|.config
 nvim-lazy|symlink|.config|nvim
 nvim-chad|symlink|.config
