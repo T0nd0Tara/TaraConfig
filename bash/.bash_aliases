@@ -35,6 +35,11 @@ vm() {
   sshpass -p $(pass $1-pass) ssh root@$(pass $1-ip)
 }
 
+sshmount() {
+  sudo mkdir /mnt/$1
+  sudo sshpass -p $(pass $1-pass) sudo sshfs -o allow_other,default_permissions root@$(pass $1-ip):/ /mnt/$1/
+}
+
 # code interperter
 alias deno='~/.deno/bin/deno'
 
