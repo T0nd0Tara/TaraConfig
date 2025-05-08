@@ -150,8 +150,8 @@ eval "$(dircolors ~/.dir_colors)"
 
 export PROMPT_DIRTRIM=4
 
-. "$HOME/.local/bin/env"
-. "$HOME/.deno/env"
+if [ -f "$HOME/.local/bin/env" ]; then . "$HOME/.local/bin/env"; fi
+if [ -f "$HOME/.deno/env" ]; then . "$HOME/.deno/env"; fi
 
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
 export PATH="$PATH:$HOME/.cargo/bin"
