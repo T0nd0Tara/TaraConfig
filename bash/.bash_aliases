@@ -9,7 +9,6 @@ alias ...='cd ../..'
 
 # Vim / Neovim
 alias v='vim'
-alias nvim='~/Programs/nvim-linux-x86_64/bin/nvim'
 alias nv='nvim'
 alias nvc='(export NVIM_APPNAME=nvim-chad && nv)'
 alias :e='nvim'
