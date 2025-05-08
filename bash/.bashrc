@@ -1,7 +1,7 @@
 # Enable the subsequent settings only in interactive sessions
 case $- in
-  *i*) ;;
-    *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # Path to your oh-my-bash installation.
@@ -134,14 +134,13 @@ export LC_ALL=en_IL.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 # Load Angular CLI autocompletion.
@@ -151,8 +150,8 @@ eval "$(dircolors ~/.dir_colors)"
 
 export PROMPT_DIRTRIM=4
 
-
 . "$HOME/.local/bin/env"
 . "$HOME/.deno/env"
 
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
+export PATH="$PATH:$HOME/.cargo/bin"
