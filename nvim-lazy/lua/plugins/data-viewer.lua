@@ -1,14 +1,14 @@
 return {
-  'T0nd0Tara/data-viewer.nvim',
-  dir = '~/code/plugins/data-viewer.nvim/',
-  dev = true,
+  "T0nd0Tara/data-viewer.nvim",
+  -- dir = '~/code/plugins/data-viewer.nvim/',
+  -- dev = true,
   opts = {},
   lazy = false,
   config = {
     modifiable = true,
     autoDisplayWhenOpenFile = false,
     columnColorRoulette = {
-      "NormalFloat"
+      "NormalFloat",
     },
     view = {
       float = true,
