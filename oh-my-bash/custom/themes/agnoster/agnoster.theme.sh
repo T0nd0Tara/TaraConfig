@@ -553,7 +553,7 @@ function prompt_emacsdir {
 ## Main prompt
 
 function build_prompt {
-  [[ ! -z ${AG_EMACS_DIR+x} ]] && prompt_emacsdir
+  # [[ ! -z ${AG_EMACS_DIR+x} ]] && prompt_emacsdir
   prompt_status
   #[[ -z ${AG_NO_HIST+x} ]] && prompt_histdt
   [[ -z ${AG_NO_CONTEXT+x} ]] && prompt_context
@@ -564,7 +564,7 @@ function build_prompt {
   fi
   prompt_dir
   prompt_git
-  prompt_hg
+  # prompt_hg
   prompt_end
 }
 
