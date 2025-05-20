@@ -115,6 +115,10 @@ map("n", "<leader>gf", function()
   vim.api.nvim_feedkeys("a", "t", false)
 end, { desc = "git fetch" })
 
+map("n", "<leader>gp", function()
+  require("neogit").open({ "pull" })
+end, { desc = "open git log" })
+
 map("n", "<leader>gu", function()
   vim.fn.jobstart("git push", utils.job_opts)
 end, { desc = "Git Push" })
