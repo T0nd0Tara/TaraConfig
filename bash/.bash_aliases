@@ -1,8 +1,8 @@
 # ls aliases
 alias lsla='ls -lah'
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias la='ls -FA'
+alias l='ls -F'
 
 alias ..='cd ..'
 alias ...='cd ../..'
