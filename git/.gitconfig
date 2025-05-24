@@ -16,3 +16,4 @@
 	editor = vim
 [pull]
 	rebase = false
+  strategy = resolve
