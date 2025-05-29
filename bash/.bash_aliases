@@ -41,6 +41,8 @@ sshmount() {
   sudo sshpass -p $(pass $1-pass) sudo sshfs -o allow_other,default_permissions ${user:-root}@$(pass $1-ip):/ /mnt/$1/
 }
 
+alias sshmnt='sshmount'
+
 # code interperter
 alias deno='~/.deno/bin/deno'
 
