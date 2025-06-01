@@ -1,4 +1,5 @@
 bash/.bash_aliases|symlink
+bash/.profile|symlink
 bash/.bashrc|symlink|.bashrc.d|bashrc
 bash/.dir_colors|symlink
 #------------------------
