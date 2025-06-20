@@ -123,6 +123,14 @@ map("n", "<leader>gu", function()
   vim.fn.jobstart("git push", utils.job_opts)
 end, { desc = "Git Push" })
 
+map("n", "<leader>gs", require("gitsigns").stage_hunk, { desc = "Stage Hunk" })
+map("v", "<leader>gs", function()
+  require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+end, { desc = "Stage Hunk" })
+
+map("n", "<leader>gb", function()
+  require("gitsigns").blame({ toggle = true, stay = true })
+end, { desc = "Toggle Git Blame" })
 map("n", "<leader>gh", "<cmd> DiffviewFileHistory % <CR>", { desc = "Git diff view history" })
 
 -- Lsp
