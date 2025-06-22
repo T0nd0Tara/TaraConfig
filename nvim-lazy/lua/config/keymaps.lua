@@ -148,6 +148,10 @@ map(
 map("n", "<leader>lL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List" })
 map("n", "<leader>lf", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List" })
 
+map("n", "<leader>ra", function()
+  return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
+
 -- Run
 map("n", "<leader>rc", require("runner").run, { desc = "Run Current File" })
 map("n", "<leader>ru", require("runner").autorun, { desc = "Run every Update" })
