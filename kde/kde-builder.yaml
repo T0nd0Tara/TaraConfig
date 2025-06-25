@@ -29,8 +29,8 @@ global:
   # 2. num-cores-low-mem, which is set to the largest value that appears safe for
   #    particularly heavyweight projects based on total memory, intended for
   #    projects like qtwebengine.
-  num-cores: "auto"
-  num-cores-low-mem: "auto"
+  num-cores: 6
+  num-cores-low-mem: 5
 
   # Makes the built-from-source Plasma session accessible from the SDDM login screen.
   install-login-session: true
