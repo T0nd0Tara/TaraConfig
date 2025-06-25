@@ -11,9 +11,9 @@ global:
   # projects being installed that you didn't need.
   include-dependencies: true
 
-  source-dir: ~/kde/src  # Directory for downloaded source code
-  build-dir: ~/kde/build  # Directory to build KDE into before installing
-  install-dir: ~/kde/usr  # Directory to install KDE software into
+  source-dir: ~/code/thirdparty/kde/src  # Directory for downloaded source code
+  build-dir: ~/code/thirdparty/kde/build  # Directory to build KDE into before installing
+  install-dir: ~/code/thirdparty/kde/usr  # Directory to install KDE software into
   # qt-install-dir: ~/kde/qt  # Directory to install Qt if kde-builder supplies it
   log-dir: ~/kde/log  # Directory to write logs into
 
