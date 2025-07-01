@@ -38,7 +38,7 @@ vm() {
 sshmount() {
   sudo mkdir /mnt/$1
   user=$(pass $1-user 2>/dev/null)
-  sudo sshpass -p $(pass $1-pass) sudo sshfs -o allow_other,default_permissions,reconnect ${user:-root}@$(pass $1-ip):/ /mnt/$1/
+  sudo sshpass -p $(pass $1-pass) sudo sshfs -o allow_other,default_permissions ${user:-root}@$(pass $1-ip):/ /mnt/$1/
 }
 
 alias sshmnt='sshmount'
