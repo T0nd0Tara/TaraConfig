@@ -11,8 +11,11 @@
 	sslVerify = true
 [credential]
 	helper = manager
-  credentialStore = secretservice
+	credentialStore = secretservice
+	helper = /usr/local/bin/git-credential-manager
 [core]
 	editor = vim
 [pull]
 	rebase = false
+[credential "https://dev.azure.com"]
+	useHttpPath = true
