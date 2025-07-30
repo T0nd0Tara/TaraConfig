@@ -153,6 +153,8 @@ export PROMPT_DIRTRIM=4
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
 export PATH="$PATH:$HOME/.cargo/bin"
 
+. "$HOME/.cargo/env"
+
 # pnpm
 export PNPM_HOME="/home/amirs/.local/share/pnpm"
 case ":$PATH:" in
