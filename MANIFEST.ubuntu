@@ -4,6 +4,7 @@ bash/.dir_colors|symlink
 #------------------------
 git/.gitconfig|symlink
 #------------------------
+alacritty|symlink|.config
 kitty|symlink|.config
 ranger|symlink|.config
 zellij|symlink|.config

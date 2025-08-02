@@ -1,0 +1,21 @@
+[general]
+import = [
+  './snazzy.toml'
+]
+
+[window]
+decorations = "None"
+
+[font]
+normal = { family = "Cousine Nerd Font", style = "Regular"}
+
+[terminal.shell]
+program = "zellij"
+args = ["-l", "welcome"]
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control", action = "Copy" },
+  { key = "V", mods = "Control", action = "Paste" },
+  { key = "C", mods = "Control|Shift", chars = "\u0003" },
+]
