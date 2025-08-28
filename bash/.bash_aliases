@@ -20,6 +20,7 @@ alias bat='batcat'
 # Python
 alias pyvenv='python3 -m venv .venv && pyac'
 alias pyac='chmod +x ./.venv/bin/activate && . ./.venv/bin/activate'
+alias pyacd='. **/.venv/bin/activate'
 alias pyde='deactivate'
 
 # redis
