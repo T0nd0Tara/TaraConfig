@@ -153,6 +153,9 @@ export PROMPT_DIRTRIM=4
 export CHROME_DEVEL_SANDBOX=/opt/google/chrome/chrome-sandbox
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# odin
+export PATH="$PATH:$HOME/.local/share/odin-linux-amd64-nightly+2025-09-08"
+
 if [ -f "$HOME/.cargo/env" ]; then
   . "$HOME/.cargo/env"
 fi
