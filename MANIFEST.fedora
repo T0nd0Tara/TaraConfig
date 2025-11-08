@@ -12,6 +12,7 @@ kitty|symlink|.config
 zellij|symlink|.config
 nvim-lazy|symlink|.config|nvim
 nvim-chad|symlink|.config
+vim|symlink||.vim
 kde/kde-builder.yaml|symlink|.config
 #------------------------
 nvim-chad/.vimrc|symlink
