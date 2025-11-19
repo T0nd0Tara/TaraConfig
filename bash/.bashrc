@@ -167,3 +167,17 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# functions
+flip-symlink() {
+  local SYMLINK=$1
+  test -L "$SYMLINK"
+  if [ $? -ne 0 ]; then
+    echo "'$SYMLINK'" is not a symlink
+    return 1
+  fi
+  local TARGET=$(readlink -f "$SYMLINK")
+  rm "$SYMLINK"
+  mv "$TARGET" "$SYMLINK"
+  ln -s "$SYMLINK" "$TARGET"
+}
