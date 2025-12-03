@@ -16,7 +16,7 @@ end
 pcall(vim.keymap.del, { "n", "v" }, "s")
 map({ "n", "v" }, "L", "$")
 map({ "n", "v" }, "H", "^")
-local useNvimTree = true
+local useNvimTree = false
 
 if useNvimTree then
   map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
