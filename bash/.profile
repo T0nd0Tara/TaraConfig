@@ -6,3 +6,10 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export BROWSER=firefox
 export TERM=alacritty
 export QT_QPA_PLATFORMTHEME="qt5ct"
+
+
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+if which dbus-update-activation-environment >/dev/null 2>&1; then
+        dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
