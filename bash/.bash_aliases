@@ -45,9 +45,6 @@ sshmount() {
 
 alias sshmnt='sshmount'
 
-# code interperter
-alias deno='~/.deno/bin/deno'
-
 # swapfile
 swapfile() {
   path=$1

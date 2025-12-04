@@ -8,7 +8,7 @@ git/.gitconfig|symlink
 gimp/controllerrc|symlink|.config/GIMP/3.0
 gimp/shortcutsrc|symlink|.config/GIMP/3.0
 #------------------------
-kitty|symlink|.config
+alacritty|symlink|.config
 zellij|symlink|.config
 nvim-lazy|symlink|.config|nvim
 nvim-chad|symlink|.config
