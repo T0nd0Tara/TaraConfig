@@ -3,7 +3,7 @@ return {
   event = "VeryLazy",
   config = function()
     require("chatgpt").setup({
-      api_key_cmd = "pass openai-key",
+      -- api_key_cmd = "pass openai-key",
       openai_params = {
         -- NOTE: model can be a function returning the model name
         -- this is useful if you want to change the model on the fly
@@ -37,6 +37,6 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "folke/trouble.nvim", -- optional
-    "nvim-telescope/telescope.nvim"
-  }
+    "nvim-telescope/telescope.nvim",
+  },
 }
