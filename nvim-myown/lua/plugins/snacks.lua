@@ -41,7 +41,7 @@ return {
 	keys = {
 		-- Top Pickers & Explorer
 		{
-			"<leader><space>",
+			"<leader>ff",
 			function()
 				Snacks.picker.smart()
 			end,
@@ -76,19 +76,6 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<c-n>",
-			false,
-		},
-		{
-			"<c-n>",
-			function()
-				Snacks.explorer()
-				vim.print("C-n pressed")
-				vim.print(vim.api.nvim_get_mode())
-			end,
-			desc = "Toggle File Explorer",
-		},
-		{
 			"<leader>e",
 			function()
 				local explorer_pickers = Snacks.picker.get({ source = "explorer" })
@@ -101,8 +88,6 @@ return {
 				if #explorer_pickers == 0 then
 					Snacks.picker.explorer()
 				end
-				vim.print("e pressed")
-				vim.print(vim.api.nvim_get_mode())
 			end,
 			desc = "Focus File Explorer",
 		},
