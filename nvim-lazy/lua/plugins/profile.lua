@@ -1,3 +1,4 @@
+local useRandomAsciiArt = false
 local ascii_art_headers = {
   {
     [[                    +T+++++++T+++          ]],
@@ -269,13 +270,55 @@ local ascii_art_headers = {
 
 local function load_ascii(file_name)
   local lines = {}
-  for line in io.lines(vim.fn.stdpath('config') .. '/ascii/' .. file_name) do
-    lines[#lines+1] = line
+  for line in io.lines(vim.fn.stdpath("config") .. "/ascii/" .. file_name) do
+    lines[#lines + 1] = line
   end
 
   return lines
 end
 
+function DrawHeader(comp)
+  if useRandomAsciiArt then
+    local ascii_art_header_idx = math.random(#ascii_art_headers)
+    for _, line in ipairs(ascii_art_headers[ascii_art_header_idx]) do
+      comp:text_component_render({ comp:text_component(line, "center", "ProfileBlue") })
+    end
+    return
+  end
+
+  local header = {}
+  local left = load_ascii("creation_of_adam_left.txt")
+  local right = load_ascii("creation_of_adam_right.txt")
+
+  local max_height = math.max(#left, #right)
+
+  local middle = math.ceil(max_height / 2)
+  local middle_message = "  git@github.com:T0nd0Tara  "
+
+  for i = 1, max_height do
+    local middle_segment = middle_message
+    if i ~= middle then
+      middle_segment = string.rep(" ", middle_segment:len())
+    end
+    local line = left[i] .. middle_segment .. right[i]
+    header[i] = comp:text_component(line, "center", "ProfileBlue")
+  end
+  comp:text_component_render(header)
+
+  local padding = header[middle].content():len() - (left[middle]:len() + middle_message:len() + right[middle]:len())
+  vim.api.nvim_set_option_value("modifiable", true, { buf = comp.opts.bufnr })
+  vim.api.nvim_set_option_value("modified", true, { buf = comp.opts.bufnr })
+  vim.api.nvim_buf_add_highlight(
+    comp.opts.bufnr,
+    -1,
+    "ProfileRed",
+    middle,
+    padding + left[middle]:len() + 1,
+    padding + left[middle]:len() + middle_message:len()
+  )
+  vim.api.nvim_set_option_value("modifiable", false, { buf = comp.opts.bufnr })
+  vim.api.nvim_set_option_value("modified", false, { buf = comp.opts.bufnr })
+end
 return {
   -- "T0nd0Tara/profile.nvim",
   -- branch = "feat/add-cache-timeout-for-contributions-api",
@@ -313,34 +356,7 @@ return {
       -- Customize the content to render
       format = function()
         local comp = require("profile.components")
-        -- local ascii_art_header_idx = math.random(#ascii_art_headers)
-        -- local header = ascii_art_headers[ascii_art_header_idx]
-        local left = load_ascii('creation_of_adam_left.txt');
-        local right = load_ascii('creation_of_adam_right.txt');
-
-        local max_height = math.max(#left, #right)
-
-        local middle =  math.ceil(max_height / 2)
-        local middle_message = "  git@github.com:T0nd0Tara  "
-
-        local lines = {}
-        for i=1,max_height do
-          local middle_segment = middle_message
-          if i ~= middle then
-            middle_segment = string.rep(" ", middle_segment:len())
-          end
-          local line = left[i] .. middle_segment .. right[i]
-          lines[i] = comp:text_component(line, "center", "ProfileBlue");
-        end
-        comp:text_component_render(lines)
-
-        local padding = lines[middle].content():len() - (left[middle]:len() + middle_message:len() + right[middle]:len())
-        vim.api.nvim_set_option_value("modifiable", true, { buf = comp.opts.bufnr })
-        vim.api.nvim_set_option_value("modified", true, { buf = comp.opts.bufnr })
-        vim.api.nvim_buf_add_highlight(comp.opts.bufnr, -1, "ProfileRed", middle, padding + left[middle]:len() + 1, padding + left[middle]:len() + middle_message:len())
-        vim.api.nvim_set_option_value("modifiable", false, { buf = comp.opts.bufnr })
-        vim.api.nvim_set_option_value("modified", false, { buf = comp.opts.bufnr })
-
+        DrawHeader(comp)
         comp:separator_render()
         comp:separator_render()
 
