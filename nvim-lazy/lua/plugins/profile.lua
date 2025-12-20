@@ -356,6 +356,8 @@ return {
       -- Customize the content to render
       format = function()
         local comp = require("profile.components")
+        comp:separator_render()
+        comp:separator_render()
         DrawHeader(comp)
         comp:separator_render()
         comp:separator_render()
