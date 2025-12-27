@@ -143,6 +143,12 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+if [ -f ~/.env ]; then
+  set -a
+  . ~/.env
+  set +a
+fi
+
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
