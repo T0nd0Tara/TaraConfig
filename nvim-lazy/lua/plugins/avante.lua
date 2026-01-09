@@ -14,7 +14,7 @@ return {
     -- this file can contain specific instructions for your project
     instructions_file = "avante.md",
     -- for example
-    provider = "openai",
+    provider = "claude",
     providers = {
       -- claude = {
       --   endpoint = "https://api.anthropic.com",
