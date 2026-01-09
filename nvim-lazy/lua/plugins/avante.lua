@@ -25,6 +25,27 @@ return {
       --     max_tokens = 20480,
       --   },
       -- },
+      -- claude_opus = {
+      --   endpoint = "https://api.anthropic.com",
+      --   model = "claude-opus-4-5",
+      --   timeout = 30000, -- Timeout in milliseconds
+      --   extra_request_body = {
+      --     temperature = 0.75,
+      --     max_tokens = 20480,
+      --   },
+      -- },
+      --
+      --
+      ---@type AvanteSupportedProvider
+      ["claude-opus"] = {
+        __inherited_from = "claude",
+        model = "claude-opus-4-5",
+        timeout = 30000, -- Timeout in milliseconds
+        extra_request_body = {
+          temperature = 0.75,
+          max_tokens = 20480,
+        },
+      },
       openai = {
         endpoint = "https://api.openai.com/v1",
         model = "gpt-5.1",
