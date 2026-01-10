@@ -10,6 +10,7 @@ alias ...='cd ../..'
 # Vim / Neovim
 alias v='vim'
 alias nv='nvim'
+alias nvn='nvim-nightly'
 alias nvc='(export NVIM_APPNAME=nvim-chad  && nv)'
 alias nvm='(export NVIM_APPNAME=nvim-myown && nv)'
 alias :e='nvim'
