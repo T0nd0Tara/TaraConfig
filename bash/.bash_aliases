@@ -18,6 +18,7 @@ alias :q='exit'
 alias :qa=':q'
 
 # Python
+alias python='python3'
 alias pyvenv='python3 -m venv .venv && pyac'
 alias pyac='chmod +x ./.venv/bin/activate && . ./.venv/bin/activate'
 alias pyacd='. **/.venv/bin/activate'
